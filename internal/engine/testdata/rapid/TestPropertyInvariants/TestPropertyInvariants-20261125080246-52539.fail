@@ -1,0 +1,23 @@
+# 2026/11/25 08:02:46.485703 [TestPropertyInvariants] [rapid] draw action: "acquire"
+# 2026/11/25 08:02:46.485706 [TestPropertyInvariants] [rapid] draw image: 0
+# 2026/11/25 08:02:46.485707 [TestPropertyInvariants] [rapid] draw type: 0
+# 2026/11/25 08:02:46.485716 [TestPropertyInvariants] [rapid] draw action: "release"
+# 2026/11/25 08:02:46.485718 [TestPropertyInvariants] [rapid] draw pick: 0
+# 2026/11/25 08:02:46.485725 [TestPropertyInvariants] I2: idle server 1002 has disk "tenant:0000000000000001"
+# 
+v0.4.8#6646396919885957669
+0x1084210842108
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x1084210842108
+0x1f2b5a0e61c3a6
+0x0
+0x0
+0x0
+0x0
