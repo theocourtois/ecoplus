@@ -103,13 +103,13 @@ func (c *controller) releaseOutOfBand() {
 
 func (c *controller) factories() map[string]func() (tfprotov6.ProviderServer, error) {
 	return map[string]func() (tfprotov6.ProviderServer, error){
-		"ecoplus": providerserver.NewProtocol6WithError(New("test", WithBackoff(time.Millisecond))()),
+		"hetzner-ecoplus": providerserver.NewProtocol6WithError(New("test", WithBackoff(time.Millisecond))()),
 	}
 }
 
 func (c *controller) config(body string) string {
 	return fmt.Sprintf(`
-provider "ecoplus" {
+provider "hetzner-ecoplus" {
   endpoint = %q
   token    = %q
 }

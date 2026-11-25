@@ -7,7 +7,7 @@ const (
 	HeaderUserAgent     = "User-Agent"
 	PathServers         = "/v1/servers"
 	PathSelfActivity    = "/v1/self/activity"
-	UserAgentPrefix     = "terraform-provider-ecoplus/"
+	UserAgentPrefix     = "terraform-provider-hetzner-ecoplus/"
 	MaxUserDataBytes    = 32 * 1024
 	TenantLabelPrefix   = "ecoplus/"
 )

@@ -4,17 +4,17 @@ A Terraform provider and a small controller that cut Hetzner Cloud costs for sho
 
 ## Installation
 
-The provider and the controller are released on GitHub only, not on the Terraform Registry. Download the provider archive from the latest release and install it as a [development override](https://developer.hashicorp.com/terraform/cli/config/config-file#development-overrides-for-provider-developers), or build it with `make build`. The controller image is `ghcr.io/theocourtois/ecoplus-server`.
+The provider and the controller are released on GitHub only, not on the Terraform Registry. Download the provider archive from the latest release and install it as a [development override](https://developer.hashicorp.com/terraform/cli/config/config-file#development-overrides-for-provider-developers), or build it with `make build`. The controller image is `ghcr.io/theocourtois/hetzner-ecoplus-server`.
 
 ## Usage
 
 ```hcl
-provider "ecoplus" {
+provider "hetzner-ecoplus" {
   endpoint = "https://ecoplus.internal:8080"
   token    = var.ecoplus_token
 }
 
-resource "ecoplus_server" "sandbox" {
+resource "hetzner-ecoplus_server" "sandbox" {
   name        = "sandbox-1"
   server_type = "cx22"
   location    = "nbg1"

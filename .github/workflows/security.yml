@@ -78,11 +78,11 @@ jobs:
       - name: Build image
         run: |
           mkdir -p ctx/linux/amd64
-          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -trimpath -o ctx/linux/amd64/ecoplus-server ./cmd/ecoplus-server
-          docker build -f Dockerfile --build-arg TARGETPLATFORM=linux/amd64 -t ecoplus-server:ci ctx
+          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -trimpath -o ctx/linux/amd64/hetzner-ecoplus-server ./cmd/hetzner-ecoplus-server
+          docker build -f Dockerfile --build-arg TARGETPLATFORM=linux/amd64 -t hetzner-ecoplus-server:ci ctx
       - uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
         with:
-          image-ref: ecoplus-server:ci
+          image-ref: hetzner-ecoplus-server:ci
           severity: HIGH,CRITICAL
           ignore-unfixed: true
           exit-code: "1"

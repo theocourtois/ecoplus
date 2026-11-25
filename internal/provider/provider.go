@@ -40,7 +40,7 @@ func New(version string, opts ...Option) func() provider.Provider {
 }
 
 func (p *ecoplusProvider) Metadata(_ context.Context, _ provider.MetadataRequest, resp *provider.MetadataResponse) {
-	resp.TypeName = "ecoplus"
+	resp.TypeName = "hetzner-ecoplus"
 	resp.Version = p.version
 }
 

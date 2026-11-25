@@ -19,8 +19,8 @@ fuzz:
 	go test -run '^$$' -fuzz FuzzDecode -fuzztime 30s ./internal/labels
 
 docs:
-	go tool tfplugindocs generate --provider-name ecoplus
+	go tool tfplugindocs generate --provider-name hetzner-ecoplus
 
 build:
-	go build -o bin/terraform-provider-ecoplus .
-	go build -o bin/ecoplus-server ./cmd/ecoplus-server
+	go build -o bin/terraform-provider-hetzner-ecoplus .
+	go build -o bin/hetzner-ecoplus-server ./cmd/hetzner-ecoplus-server

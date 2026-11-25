@@ -1,5 +1,5 @@
 FROM gcr.io/distroless/static:nonroot
 ARG TARGETPLATFORM
-COPY $TARGETPLATFORM/ecoplus-server /ecoplus-server
+COPY $TARGETPLATFORM/hetzner-ecoplus-server /hetzner-ecoplus-server
 USER nonroot:nonroot
-ENTRYPOINT ["/ecoplus-server"]
+ENTRYPOINT ["/hetzner-ecoplus-server"]

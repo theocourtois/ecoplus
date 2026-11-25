@@ -46,6 +46,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           version="${GITHUB_REF_NAME#v}"
-          image="ghcr.io/${GITHUB_REPOSITORY_OWNER}/ecoplus-server:${version}"
-          syft "${image}" --output "spdx-json=ecoplus-server_${version}.spdx.json"
-          gh release upload "${GITHUB_REF_NAME}" "ecoplus-server_${version}.spdx.json"
+          image="ghcr.io/${GITHUB_REPOSITORY_OWNER}/hetzner-ecoplus-server:${version}"
+          syft "${image}" --output "spdx-json=hetzner-ecoplus-server_${version}.spdx.json"
+          gh release upload "${GITHUB_REF_NAME}" "hetzner-ecoplus-server_${version}.spdx.json"

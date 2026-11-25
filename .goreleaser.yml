@@ -1,5 +1,5 @@
 version: 2
-project_name: terraform-provider-ecoplus
+project_name: terraform-provider-hetzner-ecoplus
 builds:
   - id: provider
     main: .
@@ -11,8 +11,8 @@ builds:
     goarch: [amd64, arm64]
     mod_timestamp: "{{ .CommitTimestamp }}"
   - id: server
-    main: ./cmd/ecoplus-server
-    binary: ecoplus-server
+    main: ./cmd/hetzner-ecoplus-server
+    binary: hetzner-ecoplus-server
     env: [CGO_ENABLED=0]
     flags: [-trimpath]
     ldflags: ["-s -w -X main.version={{ .Version }}"]
@@ -38,7 +38,7 @@ sboms:
     args: ["$artifact", "--output", "spdx-json=$document"]
 dockers_v2:
   - ids: [server]
-    images: ["ghcr.io/{{ .Env.GITHUB_REPOSITORY_OWNER }}/ecoplus-server"]
+    images: ["ghcr.io/{{ .Env.GITHUB_REPOSITORY_OWNER }}/hetzner-ecoplus-server"]
     tags: ["{{ .Version }}", latest]
     platforms: [linux/amd64, linux/arm64]
 docker_signs:

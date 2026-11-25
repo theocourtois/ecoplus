@@ -45,7 +45,7 @@ func New(opts Options) *Client {
 	clientOpts := []hcloud.ClientOption{
 		hcloud.WithToken(opts.Token),
 		hcloud.WithHTTPClient(httpClient),
-		hcloud.WithApplication("ecoplus-server", opts.Version),
+		hcloud.WithApplication("hetzner-ecoplus-server", opts.Version),
 		hcloud.WithPollOpts(hcloud.PollOpts{BackoffFunc: hcloud.ExponentialBackoffWithOpts(hcloud.ExponentialBackoffOpts{
 			Base: time.Second, Multiplier: 2, Cap: 10 * time.Second,
 		})}),

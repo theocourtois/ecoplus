@@ -24,7 +24,7 @@ var version = "dev"
 func main() {
 	logger := slog.New(slog.NewJSONHandler(os.Stderr, nil))
 	if err := run(logger); err != nil {
-		logger.Error("ecoplus-server failed", "error", err)
+		logger.Error("hetzner-ecoplus-server failed", "error", err)
 		os.Exit(1)
 	}
 }

@@ -13,7 +13,7 @@ import (
 
 func serverConfig(name, serverType, image, extra string) string {
 	return fmt.Sprintf(`
-resource "ecoplus_server" "s" {
+resource "hetzner-ecoplus_server" "s" {
   name        = %q
   server_type = %q
   location    = "nbg1"
@@ -27,7 +27,7 @@ type captured struct{ id, lease string }
 
 func capture(dst *captured) resource.TestCheckFunc {
 	return func(s *terraform.State) error {
-		rs := s.RootModule().Resources["ecoplus_server.s"]
+		rs := s.RootModule().Resources["hetzner-ecoplus_server.s"]
 		if rs == nil {
 			return fmt.Errorf("resource not in state")
 		}
@@ -38,7 +38,7 @@ func capture(dst *captured) resource.TestCheckFunc {
 
 func sameAs(prev *captured) resource.TestCheckFunc {
 	return func(s *terraform.State) error {
-		rs := s.RootModule().Resources["ecoplus_server.s"]
+		rs := s.RootModule().Resources["hetzner-ecoplus_server.s"]
 		if rs.Primary.Attributes["id"] != prev.id || rs.Primary.Attributes["lease"] != prev.lease {
 			return fmt.Errorf("server was replaced: %v vs %+v", rs.Primary.Attributes, *prev)
 		}
@@ -48,7 +48,7 @@ func sameAs(prev *captured) resource.TestCheckFunc {
 
 func differentFrom(prev *captured) resource.TestCheckFunc {
 	return func(s *terraform.State) error {
-		rs := s.RootModule().Resources["ecoplus_server.s"]
+		rs := s.RootModule().Resources["hetzner-ecoplus_server.s"]
 		if rs.Primary.Attributes["id"] == prev.id {
 			return fmt.Errorf("server was not replaced")
 		}
@@ -57,7 +57,7 @@ func differentFrom(prev *captured) resource.TestCheckFunc {
 }
 
 func action(a plancheck.ResourceActionType) resource.ConfigPlanChecks {
-	return resource.ConfigPlanChecks{PreApply: []plancheck.PlanCheck{plancheck.ExpectResourceAction("ecoplus_server.s", a)}}
+	return resource.ConfigPlanChecks{PreApply: []plancheck.PlanCheck{plancheck.ExpectResourceAction("hetzner-ecoplus_server.s", a)}}
 }
 
 func TestCreateUpdateReplace(t *testing.T) {
@@ -70,12 +70,12 @@ func TestCreateUpdateReplace(t *testing.T) {
 			{
 				Config: c.config(serverConfig("web", "cx22", "ubuntu", "")),
 				Check: resource.ComposeTestCheckFunc(
-					resource.TestCheckResourceAttr("ecoplus_server.s", "name", "web"),
-					resource.TestCheckResourceAttr("ecoplus_server.s", "image", "ubuntu"),
-					resource.TestCheckResourceAttr("ecoplus_server.s", "reused", "false"),
-					resource.TestCheckResourceAttrSet("ecoplus_server.s", "lease"),
-					resource.TestCheckResourceAttrSet("ecoplus_server.s", "ipv4_address"),
-					resource.TestCheckResourceAttrSet("ecoplus_server.s", "ipv6_address"),
+					resource.TestCheckResourceAttr("hetzner-ecoplus_server.s", "name", "web"),
+					resource.TestCheckResourceAttr("hetzner-ecoplus_server.s", "image", "ubuntu"),
+					resource.TestCheckResourceAttr("hetzner-ecoplus_server.s", "reused", "false"),
+					resource.TestCheckResourceAttrSet("hetzner-ecoplus_server.s", "lease"),
+					resource.TestCheckResourceAttrSet("hetzner-ecoplus_server.s", "ipv4_address"),
+					resource.TestCheckResourceAttrSet("hetzner-ecoplus_server.s", "ipv6_address"),
 					capture(&first),
 				),
 			},
@@ -83,19 +83,19 @@ func TestCreateUpdateReplace(t *testing.T) {
 				Config:           c.config(serverConfig("web", "cx22", "debian", "")),
 				ConfigPlanChecks: action(plancheck.ResourceActionUpdate),
 				Check: resource.ComposeTestCheckFunc(
-					resource.TestCheckResourceAttr("ecoplus_server.s", "image", "debian"), sameAs(&first)),
+					resource.TestCheckResourceAttr("hetzner-ecoplus_server.s", "image", "debian"), sameAs(&first)),
 			},
 			{
 				Config:           c.config(serverConfig("renamed", "cx22", "debian", "")),
 				ConfigPlanChecks: action(plancheck.ResourceActionUpdate),
 				Check: resource.ComposeTestCheckFunc(
-					resource.TestCheckResourceAttr("ecoplus_server.s", "name", "renamed"), sameAs(&first)),
+					resource.TestCheckResourceAttr("hetzner-ecoplus_server.s", "name", "renamed"), sameAs(&first)),
 			},
 			{
 				Config:           c.config(serverConfig("renamed", "cx22", "debian", `labels = { team = "infra" }`)),
 				ConfigPlanChecks: action(plancheck.ResourceActionUpdate),
 				Check: resource.ComposeTestCheckFunc(
-					resource.TestCheckResourceAttr("ecoplus_server.s", "labels.team", "infra"), sameAs(&first)),
+					resource.TestCheckResourceAttr("hetzner-ecoplus_server.s", "labels.team", "infra"), sameAs(&first)),
 			},
 			{
 				Config:           c.config(serverConfig("renamed", "cx32", "debian", `labels = { team = "infra" }`)),
@@ -155,13 +155,13 @@ func TestImport(t *testing.T) {
 		Steps: []resource.TestStep{
 			{Config: c.config(serverConfig("web", "cx22", "ubuntu", ""))},
 			{
-				ResourceName: "ecoplus_server.s", ImportState: true, ImportStateVerify: true,
+				ResourceName: "hetzner-ecoplus_server.s", ImportState: true, ImportStateVerify: true,
 				ImportStateIdFunc: func(s *terraform.State) (string, error) {
-					a := s.RootModule().Resources["ecoplus_server.s"].Primary.Attributes
+					a := s.RootModule().Resources["hetzner-ecoplus_server.s"].Primary.Attributes
 					return a["id"] + "/" + a["lease"], nil
 				},
 			},
-			{ResourceName: "ecoplus_server.s", ImportState: true, ImportStateId: "garbage", ExpectError: regexp.MustCompile("Invalid import ID")},
+			{ResourceName: "hetzner-ecoplus_server.s", ImportState: true, ImportStateId: "garbage", ExpectError: regexp.MustCompile("Invalid import ID")},
 		},
 	})
 }
@@ -204,7 +204,7 @@ func TestProviderConfigurationEnvironment(t *testing.T) {
 		Steps: []resource.TestStep{
 			{
 				PreConfig:   setEnv(t, map[string]string{"ECOPLUS_ENDPOINT": "", "ECOPLUS_TOKEN": ""}),
-				Config:      `provider "ecoplus" {}` + serverConfig("web", "cx22", "ubuntu", ""),
+				Config:      `provider "hetzner-ecoplus" {}` + serverConfig("web", "cx22", "ubuntu", ""),
 				PlanOnly:    true,
 				ExpectError: regexp.MustCompile("Missing (endpoint|token)"),
 			},

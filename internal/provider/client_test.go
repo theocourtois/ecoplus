@@ -50,7 +50,7 @@ func TestHeadersSent(t *testing.T) {
 	if err != nil || srv.ID != 4 {
 		t.Fatalf("%+v %v", srv, err)
 	}
-	if got.Get("Authorization") != "Bearer tok" || got.Get("User-Agent") != "terraform-provider-ecoplus/9.9.9" ||
+	if got.Get("Authorization") != "Bearer tok" || got.Get("User-Agent") != "terraform-provider-hetzner-ecoplus/9.9.9" ||
 		got.Get(api.HeaderLease) != "the-lease" {
 		t.Fatalf("headers: %v", got)
 	}
