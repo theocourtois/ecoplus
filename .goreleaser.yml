@@ -1,0 +1,49 @@
+version: 2
+project_name: terraform-provider-ecoplus
+builds:
+  - id: provider
+    main: .
+    binary: "{{ .ProjectName }}_v{{ .Version }}"
+    env: [CGO_ENABLED=0]
+    flags: [-trimpath]
+    ldflags: ["-s -w -X main.version={{ .Version }}"]
+    goos: [linux, darwin, windows]
+    goarch: [amd64, arm64]
+    mod_timestamp: "{{ .CommitTimestamp }}"
+  - id: server
+    main: ./cmd/ecoplus-server
+    binary: ecoplus-server
+    env: [CGO_ENABLED=0]
+    flags: [-trimpath]
+    ldflags: ["-s -w -X main.version={{ .Version }}"]
+    goos: [linux]
+    goarch: [amd64, arm64]
+archives:
+  - id: provider
+    ids: [provider]
+    formats: [zip]
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+checksum:
+  name_template: "{{ .ProjectName }}_{{ .Version }}_SHA256SUMS"
+signs:
+  - id: cosign
+    cmd: cosign
+    artifacts: checksum
+    signature: "${artifact}.sigstore.json"
+    args: ["sign-blob", "--yes", "--bundle=${signature}", "${artifact}"]
+sboms:
+  - artifacts: archive
+    documents: ["{{ .ArtifactName }}.spdx.json"]
+    cmd: syft
+    args: ["$artifact", "--output", "spdx-json=$document"]
+dockers_v2:
+  - ids: [server]
+    images: ["ghcr.io/{{ .Env.GITHUB_REPOSITORY_OWNER }}/ecoplus-server"]
+    tags: ["{{ .Version }}", latest]
+    platforms: [linux/amd64, linux/arm64]
+docker_signs:
+  - cmd: cosign
+    args: ["sign", "--yes", "${artifact}@${digest}"]
+    artifacts: images
+release:
+  draft: false
