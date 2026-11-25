@@ -3,8 +3,8 @@ package engine
 import (
 	"context"
 
-	"github.com/theocourtois/ecoplus/internal/api"
-	"github.com/theocourtois/ecoplus/internal/fleet"
+	"github.com/theocourtois/hetzner-ecoplus/internal/api"
+	"github.com/theocourtois/hetzner-ecoplus/internal/fleet"
 )
 
 func (e *Engine) owned(id int64, lease string) (fleet.Record, error) {

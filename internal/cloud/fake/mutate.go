@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/theocourtois/ecoplus/internal/cloud"
+	"github.com/theocourtois/hetzner-ecoplus/internal/cloud"
 )
 
 func (c *Cloud) nameTaken(name string, except int64) bool {

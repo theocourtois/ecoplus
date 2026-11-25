@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/hetznercloud/hcloud-go/v2/hcloud"
-	"github.com/theocourtois/ecoplus/internal/cloud"
+	"github.com/theocourtois/hetzner-ecoplus/internal/cloud"
 )
 
 func classify(op string, err error) error {

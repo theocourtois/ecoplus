@@ -11,11 +11,11 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/theocourtois/ecoplus/internal/cloud/hetzner"
-	"github.com/theocourtois/ecoplus/internal/config"
-	"github.com/theocourtois/ecoplus/internal/engine"
-	"github.com/theocourtois/ecoplus/internal/metrics"
-	"github.com/theocourtois/ecoplus/internal/server"
+	"github.com/theocourtois/hetzner-ecoplus/internal/cloud/hetzner"
+	"github.com/theocourtois/hetzner-ecoplus/internal/config"
+	"github.com/theocourtois/hetzner-ecoplus/internal/engine"
+	"github.com/theocourtois/hetzner-ecoplus/internal/metrics"
+	"github.com/theocourtois/hetzner-ecoplus/internal/server"
 	"k8s.io/utils/clock"
 )
 

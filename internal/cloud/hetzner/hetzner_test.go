@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/theocourtois/ecoplus/internal/cloud"
+	"github.com/theocourtois/hetzner-ecoplus/internal/cloud"
 )
 
 func TestListPaginatesAndSendsSelector(t *testing.T) {

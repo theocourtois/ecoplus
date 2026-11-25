@@ -1,4 +1,4 @@
-# ecoplus
+# hetzner-ecoplus
 
 A Terraform provider and a small controller that cut Hetzner Cloud costs for short-lived servers. Hetzner bills per started hour: ecoplus wipes released servers and keeps them in a pool until just before their next billed hour, so a new request with a compatible spec reuses a server that is already paid for.
 

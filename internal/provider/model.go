@@ -7,7 +7,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/attr"
 	"github.com/hashicorp/terraform-plugin-framework/diag"
 	"github.com/hashicorp/terraform-plugin-framework/types"
-	"github.com/theocourtois/ecoplus/internal/api"
+	"github.com/theocourtois/hetzner-ecoplus/internal/api"
 )
 
 type serverModel struct {

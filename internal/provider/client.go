@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/theocourtois/ecoplus/internal/api"
+	"github.com/theocourtois/hetzner-ecoplus/internal/api"
 )
 
 const (

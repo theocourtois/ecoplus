@@ -8,7 +8,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/theocourtois/ecoplus/internal/cloud"
+	"github.com/theocourtois/hetzner-ecoplus/internal/cloud"
 	"k8s.io/utils/clock"
 )
 

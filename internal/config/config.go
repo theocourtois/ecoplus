@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/theocourtois/ecoplus/internal/fleet"
+	"github.com/theocourtois/hetzner-ecoplus/internal/fleet"
 )
 
 type Config struct {

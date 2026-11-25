@@ -3,9 +3,9 @@ package engine
 import (
 	"context"
 
-	"github.com/theocourtois/ecoplus/internal/cloud"
-	"github.com/theocourtois/ecoplus/internal/fleet"
-	"github.com/theocourtois/ecoplus/internal/labels"
+	"github.com/theocourtois/hetzner-ecoplus/internal/cloud"
+	"github.com/theocourtois/hetzner-ecoplus/internal/fleet"
+	"github.com/theocourtois/hetzner-ecoplus/internal/labels"
 )
 
 func (e *Engine) Resync(ctx context.Context) error {

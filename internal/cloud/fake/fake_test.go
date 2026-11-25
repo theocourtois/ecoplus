@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/theocourtois/ecoplus/internal/cloud"
+	"github.com/theocourtois/hetzner-ecoplus/internal/cloud"
 	clocktesting "k8s.io/utils/clock/testing"
 )
 

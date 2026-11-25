@@ -15,11 +15,11 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
 	"github.com/hashicorp/terraform-plugin-go/tfprotov6"
-	"github.com/theocourtois/ecoplus/internal/api"
-	"github.com/theocourtois/ecoplus/internal/cloud/fake"
-	"github.com/theocourtois/ecoplus/internal/engine"
-	"github.com/theocourtois/ecoplus/internal/fleet"
-	"github.com/theocourtois/ecoplus/internal/server"
+	"github.com/theocourtois/hetzner-ecoplus/internal/api"
+	"github.com/theocourtois/hetzner-ecoplus/internal/cloud/fake"
+	"github.com/theocourtois/hetzner-ecoplus/internal/engine"
+	"github.com/theocourtois/hetzner-ecoplus/internal/fleet"
+	"github.com/theocourtois/hetzner-ecoplus/internal/server"
 	clocktesting "k8s.io/utils/clock/testing"
 )
 

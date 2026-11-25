@@ -18,7 +18,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema/stringplanmodifier"
 	"github.com/hashicorp/terraform-plugin-framework/schema/validator"
 	"github.com/hashicorp/terraform-plugin-framework/types"
-	"github.com/theocourtois/ecoplus/internal/api"
+	"github.com/theocourtois/hetzner-ecoplus/internal/api"
 )
 
 const operationTimeout = 20 * time.Minute

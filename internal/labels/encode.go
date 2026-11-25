@@ -3,7 +3,7 @@ package labels
 import (
 	"strconv"
 
-	"github.com/theocourtois/ecoplus/internal/fleet"
+	"github.com/theocourtois/hetzner-ecoplus/internal/fleet"
 )
 
 func Encode(r fleet.Record) map[string]string {

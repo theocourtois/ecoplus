@@ -1,4 +1,4 @@
-module github.com/theocourtois/ecoplus
+module github.com/theocourtois/hetzner-ecoplus
 
 go 1.27.4
 

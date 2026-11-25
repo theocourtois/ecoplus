@@ -5,8 +5,8 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-	"github.com/theocourtois/ecoplus/internal/engine"
-	"github.com/theocourtois/ecoplus/internal/fleet"
+	"github.com/theocourtois/hetzner-ecoplus/internal/engine"
+	"github.com/theocourtois/hetzner-ecoplus/internal/fleet"
 )
 
 type Source interface {

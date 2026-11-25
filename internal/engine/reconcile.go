@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/theocourtois/ecoplus/internal/cloud"
-	"github.com/theocourtois/ecoplus/internal/fleet"
-	"github.com/theocourtois/ecoplus/internal/labels"
+	"github.com/theocourtois/hetzner-ecoplus/internal/cloud"
+	"github.com/theocourtois/hetzner-ecoplus/internal/fleet"
+	"github.com/theocourtois/hetzner-ecoplus/internal/labels"
 )
 
 func (e *Engine) write(ctx context.Context, next fleet.Record, name string) (fleet.Record, error) {

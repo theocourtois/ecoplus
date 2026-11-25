@@ -5,7 +5,7 @@ import (
 	"log/slog"
 	"net/http"
 
-	"github.com/theocourtois/ecoplus/internal/api"
+	"github.com/theocourtois/hetzner-ecoplus/internal/api"
 )
 
 type Engine interface {

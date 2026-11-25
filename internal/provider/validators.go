@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/schema/validator"
-	"github.com/theocourtois/ecoplus/internal/api"
+	"github.com/theocourtois/hetzner-ecoplus/internal/api"
 )
 
 type noReservedLabelPrefix struct{}

@@ -5,11 +5,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/theocourtois/ecoplus/internal/api"
-	"github.com/theocourtois/ecoplus/internal/cloud"
-	"github.com/theocourtois/ecoplus/internal/cloud/fake"
-	"github.com/theocourtois/ecoplus/internal/fleet"
-	"github.com/theocourtois/ecoplus/internal/labels"
+	"github.com/theocourtois/hetzner-ecoplus/internal/api"
+	"github.com/theocourtois/hetzner-ecoplus/internal/cloud"
+	"github.com/theocourtois/hetzner-ecoplus/internal/cloud/fake"
+	"github.com/theocourtois/hetzner-ecoplus/internal/fleet"
+	"github.com/theocourtois/hetzner-ecoplus/internal/labels"
 	clocktesting "k8s.io/utils/clock/testing"
 )
 

@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/theocourtois/ecoplus/internal/engine"
-	"github.com/theocourtois/ecoplus/internal/fleet"
+	"github.com/theocourtois/hetzner-ecoplus/internal/engine"
+	"github.com/theocourtois/hetzner-ecoplus/internal/fleet"
 )
 
 type src struct{ st engine.Stats }

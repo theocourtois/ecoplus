@@ -8,8 +8,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/theocourtois/ecoplus/internal/cloud"
-	"github.com/theocourtois/ecoplus/internal/fleet"
+	"github.com/theocourtois/hetzner-ecoplus/internal/cloud"
+	"github.com/theocourtois/hetzner-ecoplus/internal/fleet"
 	"k8s.io/client-go/util/workqueue"
 	"k8s.io/utils/clock"
 )

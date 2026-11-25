@@ -1,6 +1,6 @@
 package labels
 
-import "github.com/theocourtois/ecoplus/internal/fleet"
+import "github.com/theocourtois/hetzner-ecoplus/internal/fleet"
 
 func checkConsistency(r fleet.Record) error {
 	switch r.State {

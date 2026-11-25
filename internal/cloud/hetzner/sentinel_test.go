@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/theocourtois/ecoplus/internal/cloud"
+	"github.com/theocourtois/hetzner-ecoplus/internal/cloud"
 )
 
 func TestGeneratedSentinelKeyIsValidAuthorizedKey(t *testing.T) {

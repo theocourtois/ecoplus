@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/theocourtois/ecoplus/internal/api"
-	"github.com/theocourtois/ecoplus/internal/cloud"
+	"github.com/theocourtois/hetzner-ecoplus/internal/api"
+	"github.com/theocourtois/hetzner-ecoplus/internal/cloud"
 )
 
 type sshKeyCache struct {

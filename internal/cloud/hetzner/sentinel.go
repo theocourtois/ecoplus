@@ -7,7 +7,7 @@ import (
 	"strconv"
 
 	"github.com/hetznercloud/hcloud-go/v2/hcloud"
-	"github.com/theocourtois/ecoplus/internal/cloud"
+	"github.com/theocourtois/hetzner-ecoplus/internal/cloud"
 	"golang.org/x/crypto/ssh"
 )
 

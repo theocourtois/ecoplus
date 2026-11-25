@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/theocourtois/ecoplus/internal/fleet"
+	"github.com/theocourtois/hetzner-ecoplus/internal/fleet"
 )
 
 func Decode(in map[string]string) (fleet.Record, error) {

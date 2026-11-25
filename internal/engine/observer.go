@@ -1,6 +1,6 @@
 package engine
 
-import "github.com/theocourtois/ecoplus/internal/fleet"
+import "github.com/theocourtois/hetzner-ecoplus/internal/fleet"
 
 type Observer interface {
 	Acquired(reused bool)

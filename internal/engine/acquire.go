@@ -3,8 +3,8 @@ package engine
 import (
 	"context"
 
-	"github.com/theocourtois/ecoplus/internal/api"
-	"github.com/theocourtois/ecoplus/internal/fleet"
+	"github.com/theocourtois/hetzner-ecoplus/internal/api"
+	"github.com/theocourtois/hetzner-ecoplus/internal/fleet"
 )
 
 func (e *Engine) Acquire(ctx context.Context, req api.ServerRequest) (api.Server, bool, error) {

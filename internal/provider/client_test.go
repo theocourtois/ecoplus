@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/theocourtois/ecoplus/internal/api"
+	"github.com/theocourtois/hetzner-ecoplus/internal/api"
 )
 
 func clientFor(t *testing.T, h http.HandlerFunc) *Client {

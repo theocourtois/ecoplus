@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/theocourtois/ecoplus/internal/fleet"
+	"github.com/theocourtois/hetzner-ecoplus/internal/fleet"
 	"pgregory.net/rapid"
 )
 

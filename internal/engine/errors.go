@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 
-	"github.com/theocourtois/ecoplus/internal/api"
-	"github.com/theocourtois/ecoplus/internal/cloud"
+	"github.com/theocourtois/hetzner-ecoplus/internal/api"
+	"github.com/theocourtois/hetzner-ecoplus/internal/cloud"
 )
 
 func upstream(err error) *api.Error {
