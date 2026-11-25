@@ -1,0 +1,1 @@
+terraform import ecoplus_server.sandbox 12345678/0123456789abcdef
